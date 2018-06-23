@@ -17,6 +17,7 @@ EXPOSE 22:22
 RUN ls
 
 COPY docker-entrypoint.sh /usr/local/bin/
-RUN ln -s usr/local/bin/docker-entrypoint.sh / # backwards compat
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+#RUN ln -s usr/local/bin/docker-entrypoint.sh / # backwards compat
 
-CMD ["/docker-entrypoint.sh"]
+CMD ["/usr/local/bin/docker-entrypoint.sh"]
